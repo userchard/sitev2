@@ -165,7 +165,7 @@ header {
     align-items: center; /* Centraliza verticalmente o conteúdo */
     text-align: center; /* Centraliza o texto */
     margin: 0 auto; /* Centraliza o header na tela */
-    background: url(img-home/fundo-header.svg) no-repeat;
+    background: url(img-dados/fundo-maquina-agricola.jpg) no-repeat;
     background-size: cover; /* Faz a imagem cobrir todo o header */
     background-position: 50% 60%; /* Ajusta a posição horizontal e vertical */
     color: #ffffff; /* Cor do texto */
@@ -353,7 +353,7 @@ header::before {
     header {
         height: 400px !important; /* Ajusta a altura do header */
         background-size: cover;
-        background-position: 70% 50% !important;
+        background-position: 50% 50% !important;
     }
 
     /* Header: alinha título, subtítulo e botão à esquerda com margem */
