@@ -21,27 +21,30 @@ menuBtn.addEventListener('click', function () {
   this.setAttribute('aria-expanded', expanded);
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    const wrapper = document.querySelector('.benefits-wrapper');
+// AQUI COMEÇA A PARTE NOVA:
+let scrollInterval;
 
+function iniciarScrollAutomatico() {
+    if (scrollInterval) clearInterval(scrollInterval);
+
+    const wrapper = document.querySelector('.benefits-wrapper');
     if (!wrapper) return;
 
-    let scrollDirection = 1;
+    if (window.innerWidth <= 768) {
+        let scrollDirection = 1;
 
-    function iniciarScrollAutomatico() {
-        setInterval(() => {
-            if (window.innerWidth <= 768) {
-                wrapper.scrollLeft += 2 * scrollDirection;
+        scrollInterval = setInterval(() => {
+            wrapper.scrollLeft += 2 * scrollDirection;
 
-                if (wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth - 1) {
-                    scrollDirection = -1;
-                }
-                if (wrapper.scrollLeft <= 0) {
-                    scrollDirection = 1;
-                }
+            if (wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth - 1) {
+                scrollDirection = -1;
+            }
+            if (wrapper.scrollLeft <= 0) {
+                scrollDirection = 1;
             }
         }, 16);
     }
+}
 
-    iniciarScrollAutomatico();
-});
+document.addEventListener('DOMContentLoaded', iniciarScrollAutomatico);
+window.addEventListener('resize', iniciarScrollAutomatico);
