@@ -207,6 +207,7 @@ header::before {
 .header-content h1 {
     font-size: 48px;
     max-width: 85%;
+    letter-spacing: 0.03rem;
 }
 
 .subtitle {
