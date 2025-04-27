@@ -1,4 +1,16 @@
 /* Estilo base */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -94,7 +106,7 @@ nav {
         display: block;
     }
   .menu-btn.active .menu-bar:nth-child(1) {
-    transform: translateY(6px) rotate(-45deg);
+    transform: translateY(8px) rotate(-45deg);
   }
   .menu-btn.active .menu-bar:nth-child(2) {
     opacity: 0;
@@ -146,18 +158,17 @@ nav {
 header {
     position: relative;
     display: flex;
-    flex-direction: row; /* Alinha os elementos em uma linha */
-    justify-content: center; /* Centraliza horizontalmente o conteúdo */
-    align-items: center; /* Centraliza verticalmente o conteúdo */
-    text-align: center; /* Centraliza o texto */
-    margin: 0 auto; /* Centraliza o header na tela */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
     background: url(img-home/fundo-header.svg) no-repeat;
-    background-size: cover; /* Faz a imagem cobrir todo o header */
-    background-position: 50% 60%; /* Ajusta a posição horizontal e vertical */
-    color: #ffffff; /* Cor do texto */
-    padding: 20px; /* Espaçamento interno */
-    width: 100%; /* Garante que o header não ultrapasse a largura da tela */
-    height: 600px !important; /* Altura do header */
+    background-size: cover;
+    background-position: 50% 60%;
+    color: #ffffff;
+    width: 100%;
+    height: 600px !important;
+    margin-bottom: 2rem;
 }
 
 header::after {
@@ -208,9 +219,9 @@ header::before {
 }
 
 .header-content .title {
-    font-size: 48px;
-    max-width: 85%;
-    letter-spacing: 0.03rem;
+    font-size: 3.8rem !important;
+    line-height: 1.2;
+    margin-bottom: 1vw;
 }
 
 .subtitle {
@@ -307,20 +318,18 @@ button {
     color: #1B7A43;
    }
 
-.main-container {
-    background-color: #fafafa;
-    max-width: 84vw; /* Define a largura máxima do site */
-    margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
-    width: 100%; /* Garante que o contêiner ocupe toda a largura em telas menores */
-    box-sizing: border-box; /* Inclui padding e borda no cálculo da largura */
-}
+    .main-container {
+        background-color: #fafafa;
+        max-width: 84vw; /* Define a largura máxima do site */
+        margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
+        width: 100%; /* Garante que o contêiner ocupe toda a largura em telas menores */
+        box-sizing: border-box; /* Inclui padding e borda no cálculo da largura */
+    }
 
-section {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
+    section {
+        display: flex;
+        flex-direction: column;
+    }
 
     .destaque {
         color: #1B7A43; /* Cor de destaque */
@@ -331,26 +340,13 @@ section {
         width: 100%;
         max-width: 1200px;
         margin: 0 auto;
-        padding: 2rem 1rem;
+        text-align: center;
     }
     
     .benefits-container {
         width: 100%;
         max-width: 1000px;
         margin: 0 auto;
-        text-align: center;
-    }
-    
-    .benefits-title {
-        width: 100%;
-        max-width: 700px;
-        margin: 0 auto 2rem auto;
-        background-color: #ffffff;
-        border-radius: 1vw;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        padding: 2vw 1vw;
-        font-size: 1.6rem;
-        color: #5C8052;
         text-align: center;
     }
   
@@ -396,68 +392,63 @@ section {
         text-align: center;
     }
 
-.card-branco {
+.fade-in-section .card-verde {
     display: flex; /* Organiza os itens em linha */
     align-items: center; /* Centraliza verticalmente */
-    background: #fafafa; /* Fundo branco */
-    border-radius: 10px; /* Bordas arredondadas */
-    padding: 20px; /* Espaçamento interno */
+    background: #34985d; /* Fundo branco */
+    border-radius: 8vw; /* Bordas arredondadas */
+    padding: 6vw; /* Espaçamento interno */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar o card */
-    margin-top: 2vw;
+    margin-top: 1vw;
+    margin-bottom: 8vw;
     width: 100%; /* Largura total do card */
-    max-width: 84vw; /* Largura máxima do card */
-    gap: 100px; /* Espaçamento entre a imagem e o texto */
-}
+    gap: 1vw; /* Espaçamento entre a imagem e o texto */
+    }
+    .card-img {
+        width: 400px;
+        height: auto;
+        border-radius: 10vw;
+        object-fit: cover; /* Garante que a imagem se ajuste ao espaço */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .card-verde .card-content h2 {
+        margin-bottom: 15px;
+        color: #ffffff;
+        font-size: 1.8rem; 
+        font-weight: bold; 
+    }
+    .card-verde .card-content p {
+        color: #ffffff;
+        line-height: 1.6;
+        font-size: 1.1rem;
+    }
+    /* Card arredondado branco */
+    .fade-in-section .card-branco {
+        padding: 6vw; 
+        border-radius: 8vw; 
+        box-shadow: 0 0px 15px rgba(0, 0, 0, 0.1);
+        margin-top: 0vw;
+        margin-bottom: 8vw;
+        max-width: 100%;
+    }
+    .card-branco .card-content h2 {
+        margin-bottom: 1.2rem;
+        color: #1B7A43;
+        font-size: 1.8rem; 
+        font-weight: bold; 
+    }
+    .card-branco .card-content p {
+        color: #333;
+        line-height: 1.6;
+        font-size: 1.1rem;
+    }
 
-.card-img {
-    width: 400px; /* Largura da imagem */
-    height: auto; /* Mantém a proporção da imagem */
-    border-radius: 20px; /* Bordas arredondadas */
-    object-fit: cover; /* Garante que a imagem se ajuste ao espaço */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar a imagem */
-}
-
-.card-verde {
-    background: #34985d; /* Fundo verde */
-    color: #ffffff; /* Cor do texto */
-    padding: 20px; /* Espaçamento interno */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar o card */
-    margin-top: 2vw;
-    max-width: 100%; /* Largura máxima do card */
-}
-
-.card-content {
-    flex: 1; /* Faz o texto ocupar o restante do espaço */
-    text-align: left; /* Alinha o texto à esquerda */
-    padding: 20px; /* Espaçamento interno */
-}
-
-.card-content h2 {
-    margin-bottom: 15px; /* Espaçamento abaixo do título */
-    color: #4CAF50; /* Cor do título */
-    font-size: 1.8rem; /* Tamanho do título */
-    font-weight: bold; /* Negrito */
-}
-
-.card-content p {
-    color: #333; /* Cor do texto */
-    line-height: 1.6; /* Melhor espaçamento entre linhas */
-    font-size: 1.1rem; /* Tamanho do texto */
-}
-
-.card-content-verde {
-    flex: 1; /* Faz o texto ocupar o restante do espaço */
-    text-align: left; /* Alinha o texto à esquerda */
-    padding: 20px; /* Espaçamento interno */
-}
-
-.secao-verde {
-    background: #34985d;
-    padding: 2vw 0;
+.secao-cards {
+    padding: 0vw 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 3rem;
 }
 
 .grid-cards {
@@ -477,11 +468,12 @@ section {
     align-items: center;
     justify-content: center;
     transition: all 0.2s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .grids-branco:hover {
-        transform: scale(1.02);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .grid-content {
@@ -601,10 +593,10 @@ footer {
         justify-content: space-between !important;
         padding: 0.6rem 1rem; /* Ajusta espaçamento interno */
     }
-    .site-name {
-        font-size: 1.2rem;
-        padding: 0; /* Tira padding exagerado */
-        margin-left: 0.5rem;
+    .nav-left .site-name {
+        font-size: 1.1rem;
+        padding: 0 0; /* Tira padding exagerado */
+        margin-left: 0.1rem;
     }
     .nav-center { 
         display: none !important;
@@ -650,6 +642,7 @@ footer {
         height: 112vw !important; /* Ajusta a altura do header */
         background-size: cover;
         background-position: 70% 50% !important;
+        padding: 0 0.2rem;
     }
 
     /* Esconde a imagem quadrada do header */
@@ -674,21 +667,20 @@ footer {
         margin-top: 2rem;
     }
     .header-content .title {
-        font-size: 1.6rem !important;
+        font-size: 1.3rem !important;
         margin-bottom: 2vw;
         text-align: left !important;
         word-break: break-word;
-        line-height: 1.2;
-        width: 100%;
+        line-height: 1.5;
+        width: 88%;
     }
     .subtitle {
-        font-size: 0.9rem !important;
+        font-size: 3.4vw !important;
         text-align: left !important;
         margin-top: 0.4vw;
         margin-bottom: 5vw;
-        max-width: 82%;
-        letter-spacing: 0.1rem;
-        line-height: 1.4;
+        width: 88%;
+        line-height: 1.5;
     }
 
     /* Botão learn-more compacto */
@@ -707,7 +699,7 @@ footer {
         border-radius: 1rem !important;
     }
     .learn-more .circle .icon.arrow {
-        left: 0.3rem !important;
+        left: 0.23rem !important;
         width: 0.8rem !important;
         height: 0.10rem !important;
     }
@@ -743,13 +735,9 @@ footer {
         width: 100%;
         max-width: 90vw;
     }
-
     .benefits-section {
-        padding: 1rem 0.5rem;
-    }
-    .benefits-title {
-        font-size: 1.1rem;
-        padding: 1.2rem 0.5rem;
+        margin-top: 2rem;
+        padding: 0rem 0rem;
     }
 
     /* Novo wrapper da área de rolagem */
@@ -759,7 +747,7 @@ footer {
         scroll-snap-type: x mandatory;
         padding-bottom: 2rem;
         margin-left: -8vw;
-        margin-right: -1vw;
+        margin-right: -4vw;
         padding-left: 8vw;
         padding-right: 16vw; /* AUMENTA AQUI! */
     }
@@ -768,7 +756,6 @@ footer {
         width: 0.1vw; /* Pode ajustar esse valor */
         height: 1px; /* Só pra existir, não precisa altura */
     }
-
     /* Agora o grid em si pode ser livre */
     .benefits-grid {
         display: flex;
@@ -776,7 +763,6 @@ footer {
         gap: 1.5rem; /* Aumenta o espaço entre os cards */
         width: max-content;
     }
-
     /* Cada item normal */
     .benefit-item {
         flex: 0 0 auto;
@@ -789,7 +775,6 @@ footer {
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         transition: transform 0.3s;
     }
-
     .benefit-item:hover {
         transform: scale(1.05);
     }
@@ -800,22 +785,9 @@ footer {
         font-size: 1rem;
     }
     
-    .card-branco {
-        display: flex;
-        align-items: center;
-        background: #fafafa;
-        border-radius: 8vw;
-        padding: 6vw 6vw;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Seção Conteúdo 2 */
+    .fade-in-section .card-branco {
         max-width: 100%;
-        gap: 2vw;
-        flex-direction: column;
-    }
-    .card-img {
-        width: 100%;
-        max-width: 320px;
-        margin: 12px 0 0 0;
-        align-self: center;
     }
     .card-content {
         text-align: center;
@@ -827,15 +799,18 @@ footer {
         font-size: 1.2rem;
         line-height: 1.4;
     }
-    .card-verde {
+    .fade-in-section .card-verde {
         display: flex;
         align-items: center;
-        border-radius: 8vw;
-        padding: 6vw;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        margin: 6vw 0;
+        box-shadow: 0 0px 15px rgba(0, 0, 0, 0.2);
         max-width: 100%;
         flex-direction: column;
+    }
+    .card-img {
+        width: 100%;
+        max-width: 320px;
+        margin: 12px 0 0 0;
+        align-self: center;
     }
     form {
         width: 100%;
@@ -845,6 +820,23 @@ footer {
         width: 100%;
         box-sizing: border-box;
         margin-bottom: 10px;
+    }
+
+    /*Seção de Card*/
+    .secao-cards .grid-cards{
+        display: grid;
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        grid-template-rows: auto; /* Altura automática para cada linha */
+        gap: 1.5rem; /* Espaçamento entre os cards */
+        width: 100%; /* Largura total */
+        max-width: 84vw; /* Largura máxima */
+        padding: 0vw 0;
+    }
+    .secao-cards .grid-cards .grids-branco {
+        min-width: 0;
+        width: 100%;
+        border-radius: 6vw;
+        padding: 10vw 2vw;
     }
 }
 
