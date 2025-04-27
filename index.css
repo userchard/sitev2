@@ -397,17 +397,17 @@ button {
     align-items: center; /* Centraliza verticalmente */
     background: #34985d; /* Fundo branco */
     border-radius: 8vw; /* Bordas arredondadas */
-    padding: 6vw; /* Espaçamento interno */
+    padding: 4vw; /* Espaçamento interno */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar o card */
     margin-top: 1vw;
     margin-bottom: 8vw;
     width: 100%; /* Largura total do card */
-    gap: 1vw; /* Espaçamento entre a imagem e o texto */
+    gap: 4vw; /* Espaçamento entre a imagem e o texto */
     }
     .card-img {
         width: 400px;
         height: auto;
-        border-radius: 10vw;
+        border-radius: 3vw;
         object-fit: cover; /* Garante que a imagem se ajuste ao espaço */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
@@ -793,7 +793,7 @@ footer {
         text-align: center;
         margin: 0vw 1vw;
         width: 100%;
-        padding: 0 2vw;
+        padding: 4vw;
     }
     .card-content p {
         font-size: 1.2rem;
@@ -809,8 +809,9 @@ footer {
     .card-img {
         width: 100%;
         max-width: 320px;
-        margin: 12px 0 0 0;
+        margin: 4vw 0 2vw 0;
         align-self: center;
+        border-radius: 6vw;
     }
     form {
         width: 100%;
