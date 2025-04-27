@@ -20,3 +20,28 @@ menuBtn.addEventListener('click', function () {
   const expanded = this.classList.contains('active');
   this.setAttribute('aria-expanded', expanded);
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const wrapper = document.querySelector('.benefits-wrapper');
+
+    if (!wrapper) return;
+
+    let scrollDirection = 1;
+
+    function iniciarScrollAutomatico() {
+        setInterval(() => {
+            if (window.innerWidth <= 768) {
+                wrapper.scrollLeft += 2 * scrollDirection;
+
+                if (wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth - 1) {
+                    scrollDirection = -1;
+                }
+                if (wrapper.scrollLeft <= 0) {
+                    scrollDirection = 1;
+                }
+            }
+        }, 16);
+    }
+
+    iniciarScrollAutomatico();
+});
