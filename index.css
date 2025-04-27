@@ -25,26 +25,29 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    background: transparent;
+    background: #fafafa;
     display: flex;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    padding: 0.6rem 0;
     align-items: center;
     z-index: 1000;
 }
 .nav-left .site-name {
-    color: #ffffff;
+    color: #2C332A;
     font-weight: bold;
+    font-size: 1.6rem;
     text-decoration: none;
+    padding: 0 1.5vw;
+    text-shadow: #181818 0px 0vw 14vw;
 }
 .nav-center a {
-    font-size: large;
-    color: #ffffff;
+    font-size: 1.2rem;
+    color: #2C332A;
     text-decoration: none;
-    font-weight: 100;
+    font-weight: 600;
     transition: color 0.3s ease;
-    margin: 0px 20px;
-    text-shadow: #181818 0px 1px 10px;
+    padding: 1vw 2vw;
+    text-shadow: #181818 0px 0vw 12vw;
 }
 .nav-center a:hover {
     color: #dadada;
@@ -61,18 +64,18 @@ nav {
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 0 12px;
+    padding: 0 1.5vw;
     gap: 12px;             /* Espaço entre texto e barras */
     transition: background 0.2s;
     z-index: 1100;
   }
   .menu-text {
-    color: #ffffff;
+    color: #2C332A;
     font-weight: bold;
     font-size: 1.1rem;
     margin: 0;
-    padding: 0 6px 0 0;
-    letter-spacing: 0.02em;
+    padding: 0 1vw 0 0;
+    letter-spacing: 0.1rem;
   }
   .menu-bars {
     display: flex;
@@ -83,9 +86,9 @@ nav {
     gap: 4px;
    }
    .menu-bar {
-        width: 28px;
-        height: 4px;
-        background: #ffffff;
+        width: 32px;
+        height: 5px;
+        background: #2C332A;
         border-radius: 2px;
         transition: all 0.4s;
         display: block;
@@ -204,7 +207,7 @@ header::before {
     z-index: 1;
 }
 
-.header-content h1 {
+.header-content .title {
     font-size: 48px;
     max-width: 85%;
     letter-spacing: 0.03rem;
@@ -305,9 +308,9 @@ button {
    }
 
 .main-container {
-    max-width: 1400px; /* Define a largura máxima do site */
+    background-color: #fafafa;
+    max-width: 84vw; /* Define a largura máxima do site */
     margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
-    padding: 0 20px; /* Adiciona espaçamento lateral */
     width: 100%; /* Garante que o contêiner ocupe toda a largura em telas menores */
     box-sizing: border-box; /* Inclui padding e borda no cálculo da largura */
 }
@@ -319,60 +322,114 @@ section {
     margin-bottom: 2rem;
 }
 
-section h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #1B7A43;
-}
+    .destaque {
+        color: #1B7A43; /* Cor de destaque */
+        font-weight: bold;
+    }
 
-section h3 {
-    font-weight: lighter;
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: #333;
-}
+    .benefits-section {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+    
+    .benefits-container {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .benefits-title {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto 2rem auto;
+        background-color: #ffffff;
+        border-radius: 1vw;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 2vw 1vw;
+        font-size: 1.6rem;
+        color: #5C8052;
+        text-align: center;
+    }
+  
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* Sempre 4 colunas */
+        gap: 2rem;
+        width: 100%;
+        margin: 0 auto;
+        justify-items: center;
+    }
+    
+    .benefit-item {
+        background: white;
+        padding: 2vw 0;
+        border-radius: 1vw;
+        width: 100%;
+        max-width: 240px;
+        min-height: 120px;
+        box-sizing: border-box;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .benefit-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .benefit-icon {
+        font-size: 2.5rem;
+    }
+    
+    .benefit-text {
+        margin-top: 16px;
+        font-size: 1.1rem;
+        text-align: center;
+    }
 
-section h4 {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    color: #1B7A43;
-}
-
-section p, section ul {
-    font-size: 1rem;
-    color: #333;
-}
-
-.destaque {
-    color: #1B7A43; /* Cor de destaque */
-    font-weight: bold;
-}
-
-.card {
+.card-branco {
     display: flex; /* Organiza os itens em linha */
     align-items: center; /* Centraliza verticalmente */
     background: #fafafa; /* Fundo branco */
     border-radius: 10px; /* Bordas arredondadas */
     padding: 20px; /* Espaçamento interno */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar o card */
-    margin: 20px; /* Espaçamento externo e centralização */
-    max-width: 100%; /* Largura máxima do card */
+    margin-top: 2vw;
+    width: 100%; /* Largura total do card */
+    max-width: 84vw; /* Largura máxima do card */
     gap: 100px; /* Espaçamento entre a imagem e o texto */
 }
 
 .card-img {
     width: 400px; /* Largura da imagem */
     height: auto; /* Mantém a proporção da imagem */
-    margin: 0 80px; /* Espaçamento entre a imagem e o texto */
     border-radius: 20px; /* Bordas arredondadas */
     object-fit: cover; /* Garante que a imagem se ajuste ao espaço */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar a imagem */
 }
 
+.card-verde {
+    background: #34985d; /* Fundo verde */
+    color: #ffffff; /* Cor do texto */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar o card */
+    margin-top: 2vw;
+    max-width: 100%; /* Largura máxima do card */
+}
+
 .card-content {
     flex: 1; /* Faz o texto ocupar o restante do espaço */
     text-align: left; /* Alinha o texto à esquerda */
-    margin: 0 20px; /* Espaçamento interno */
     padding: 20px; /* Espaçamento interno */
 }
 
@@ -387,6 +444,78 @@ section p, section ul {
     color: #333; /* Cor do texto */
     line-height: 1.6; /* Melhor espaçamento entre linhas */
     font-size: 1.1rem; /* Tamanho do texto */
+}
+
+.card-content-verde {
+    flex: 1; /* Faz o texto ocupar o restante do espaço */
+    text-align: left; /* Alinha o texto à esquerda */
+    padding: 20px; /* Espaçamento interno */
+}
+
+.secao-verde {
+    background: #34985d;
+    padding: 2vw 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem;
+    width: 84vw;
+}
+
+.grids-branco {
+    background: #fff;
+    border-radius: 24px;
+    min-height: 16vw;
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.grids-branco:hover {
+        transform: scale(1.02);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.grid-content {
+    text-align: center;
+    padding: 2vw;
+    color: #333; /* Cor do texto */
+    font-size: 1.2rem; /* Tamanho do texto */
+}
+
+.grid-content h2 {
+    color: #1B7A43; /* Cor do título */
+    margin-bottom: 10px; /* Espaçamento abaixo do título */
+}
+
+.grid-content p {
+    margin-bottom: 20px; /* Espaçamento abaixo do parágrafo */
+    color: #333; /* Cor do texto */
+    font-size: 1rem; /* Tamanho do texto */
+}
+
+.grid-content .botao-card {
+    background: #1B7A43; /* Cor do botão */
+    color: #ffffff; /* Cor do texto do botão */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    border-radius: 5px; /* Bordas arredondadas */
+    text-decoration: none; /* Remove o sublinhado do link */
+    transition: all 0.3s; /* Transição suave */
+    font-size: 1rem; /* Tamanho do texto do botão */
+}
+
+.grid-content .botao-card:hover {
+    background: #145a2f;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Estilo para a seção de contato */
@@ -469,42 +598,55 @@ footer {
 
 @media (max-width: 768px) {
     .site-name {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
-    .nav-center { display: none !important; }
-
+    nav {
+        justify-content: center !important;
+    }
+    .nav-center { 
+        display: none !important;
+    }
     .menu-btn {
+        margin-left: 30vw !important;
+        margin-right: 0 !important;
+    }
+    .menu-text {
+        display: none !important;
+        margin-left: 20vw !important;
+    }
+    .menu-bars {
         display: flex !important;
-      }
-      .menu-lista {
-        left: 27px;
-        right: 16px;
+        margin-left: 20vw !important;
+    }
+    .menu-lista {
+        left: 5vw;
+        right: 0vw;
         width: 80vw;
         min-width: 0;
         max-width: 320px;
         width: 100%;
-        top: 70px;
-        padding: 12px 0;
-        border-radius: 14px;
+        top: 20vw;
+        padding: 2vw 0;
+        border-radius: 2vw;
         box-shadow: 0 8px 32px rgba(0,0,0,0.18);
         font-size: 1.1rem;
-      }
-      .menu-lista a {
-        padding: 14px 0px;
+    }
+    .menu-lista a {
+        padding: 4vw 0px;
         font-size: 1.2rem;
         text-align: center;
         box-shadow: 0 1px 8px rgba(0,0,0,0.1);
-        border-radius: 12px;
-        margin: 6px 14px;
-      }
-      .menu-text {
+        border-radius: 2vw;
+        margin: 1.8vw 4vw;
+    }
+    .menu-text {
         display: block;
         font-size: 1.1rem;
-      }
+    }
 
     header {
         margin: 0 auto; /* Centraliza o header na tela */
-        height: 400px !important; /* Ajusta a altura do header */
+        height: 112vw !important; /* Ajusta a altura do header */
         background-size: cover;
         background-position: 70% 50% !important;
     }
@@ -528,21 +670,23 @@ footer {
         justify-content: center;
         height: auto;
         text-align: left !important;
+        margin-top: 2rem;
     }
-    .header-content h1 {
+    .header-content .title {
         font-size: 1.6rem !important;
-        margin-bottom: 10px;
+        margin-bottom: 2vw;
         text-align: left !important;
         word-break: break-word;
         line-height: 1.2;
+        width: 100%;
     }
-    .header-content p {
+    .subtitle {
         font-size: 0.9rem !important;
         text-align: left !important;
-        margin-top: 8px;
-        margin-bottom: 15px;
+        margin-top: 0.4vw;
+        margin-bottom: 5vw;
         max-width: 82%;
-        letter-spacing: 0.01em;
+        letter-spacing: 0.1rem;
         line-height: 1.4;
     }
 
@@ -551,8 +695,8 @@ footer {
         width: 8.5rem !important;
         height: 2.2rem !important;
         font-size: 0.95rem !important;
-        min-width: 100px;
-        max-width: 180px;
+        min-width: 10vw;
+        max-width: 80vw;
     }
     .learn-more .circle {
         width: 1.7rem !important;
@@ -595,19 +739,71 @@ footer {
 
     /* Ajuste do main-container */
     .main-container {
-        padding: 12px 0 0 0;
-        margin: 0;
         width: 100%;
+        max-width: 90vw;
     }
-    .card {
+
+    .benefits-section {
+        padding: 1rem 0.5rem;
+    }
+    .benefits-title {
+        font-size: 1.1rem;
+        padding: 1.2rem 0.5rem;
+    }
+/* Novo wrapper da área de rolagem */
+.benefits-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity; /* Mudou de mandatory para proximity */
+    scroll-behavior: smooth;
+    padding-bottom: 2rem;
+    margin-left: -8vw;
+    margin-right: -8vw;
+    padding-left: 8vw;
+    padding-right: 8vw;
+}
+
+/* Agora o grid em si pode ser livre */
+.benefits-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    gap: 1rem;
+}
+
+/* Cada item normal */
+.benefit-item {
+    flex: 0 0 auto;
+    min-width: 140px;
+    max-width: 180px;
+    scroll-snap-align: center;
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.benefit-item:hover {
+    transform: scale(1.05);
+}
+    .benefit-icon {
+        font-size: 2rem;
+    }
+    .benefit-text {
+        font-size: 1rem;
+    }
+    
+    .card-branco {
+        display: flex;
+        align-items: center;
+        background: #fafafa;
+        border-radius: 8vw;
+        padding: 6vw 6vw;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        max-width: 100%;
+        gap: 2vw;
         flex-direction: column;
-        align-items: flex-start;
-        padding: 18px 10px;
-        margin: 0 0 18px 0;
-    }
-    .card-content {
-        width: 100%;
-        padding: 0;
     }
     .card-img {
         width: 100%;
@@ -615,8 +811,25 @@ footer {
         margin: 12px 0 0 0;
         align-self: center;
     }
-    section {
-        padding: 0 10px;
+    .card-content {
+        text-align: center;
+        margin: 0vw 1vw;
+        width: 100%;
+        padding: 0 2vw;
+    }
+    .card-content p {
+        font-size: 1.2rem;
+        line-height: 1.4;
+    }
+    .card-verde {
+        display: flex;
+        align-items: center;
+        border-radius: 8vw;
+        padding: 6vw;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin: 6vw 0;
+        max-width: 100%;
+        flex-direction: column;
     }
     form {
         width: 100%;
@@ -628,3 +841,9 @@ footer {
         margin-bottom: 10px;
     }
 }
+
+
+/* Estilo para telas de tablets e desktops */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Estilo para tablets */
+  }
