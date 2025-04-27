@@ -597,22 +597,23 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .site-name {
-        font-size: 1rem;
-    }
     nav {
-        justify-content: center !important;
+        justify-content: space-between !important;
+        padding: 0.6rem 1rem; /* Ajusta espaçamento interno */
+    }
+    .site-name {
+        font-size: 1.2rem;
+        padding: 0; /* Tira padding exagerado */
+        margin-left: 0.5rem;
     }
     .nav-center { 
         display: none !important;
     }
     .menu-btn {
-        margin-left: 30vw !important;
-        margin-right: 0 !important;
+        margin: 0; /* Remove margem desnecessária */
     }
     .menu-text {
         display: none !important;
-        margin-left: 20vw !important;
     }
     .menu-bars {
         display: flex !important;
@@ -750,43 +751,48 @@ footer {
         font-size: 1.1rem;
         padding: 1.2rem 0.5rem;
     }
-/* Novo wrapper da área de rolagem */
-.benefits-wrapper {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x proximity; /* Mudou de mandatory para proximity */
-    scroll-behavior: smooth;
-    padding-bottom: 2rem;
-    margin-left: -8vw;
-    margin-right: -8vw;
-    padding-left: 8vw;
-    padding-right: 8vw;
-}
 
-/* Agora o grid em si pode ser livre */
-.benefits-grid {
-    display: flex;
-    flex-wrap: nowrap;
-    width: max-content;
-    gap: 1rem;
-}
+    /* Novo wrapper da área de rolagem */
+    .benefits-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 2rem;
+        margin-left: -8vw;
+        margin-right: -1vw;
+        padding-left: 8vw;
+        padding-right: 16vw; /* AUMENTA AQUI! */
+    }
+    .benefit-spacer {
+        flex: 0 0 auto;
+        width: 0.1vw; /* Pode ajustar esse valor */
+        height: 1px; /* Só pra existir, não precisa altura */
+    }
 
-/* Cada item normal */
-.benefit-item {
-    flex: 0 0 auto;
-    min-width: 140px;
-    max-width: 180px;
-    scroll-snap-align: center;
-    background: white;
-    border-radius: 1rem;
-    padding: 1.5rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
-}
+    /* Agora o grid em si pode ser livre */
+    .benefits-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 1.5rem; /* Aumenta o espaço entre os cards */
+        width: max-content;
+    }
 
-.benefit-item:hover {
-    transform: scale(1.05);
-}
+    /* Cada item normal */
+    .benefit-item {
+        flex: 0 0 auto;
+        min-width: 140px;
+        max-width: 180px;
+        scroll-snap-align: center;
+        background: white;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s;
+    }
+
+    .benefit-item:hover {
+        transform: scale(1.05);
+    }
     .benefit-icon {
         font-size: 2rem;
     }
