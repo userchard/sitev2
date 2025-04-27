@@ -1,855 +1,148 @@
-/* Estilo base */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rota do Milho</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <a href="index.html" class="site-name">Rota do Milho</a>
+        </div>
+        <div class="nav-center">
+            <a href="#introducao">Início</a>
+            <a href="#conteudo-1">Guia</a>
+            <a href="dados.html">Dados</a>
+            <a href="#contato">Contato</a>
+        </div>
+        <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false" id="menu-toggle">
+            <span class="menu-text">Menu</span>
+            <span class="menu-bars">
+              <span class="menu-bar"></span>
+              <span class="menu-bar"></span>
+              <span class="menu-bar"></span>
+            </span>
+          </button>
+          <div class="menu-lista" id="menu-lista">
+            <a href="#introducao">Início</a>
+            <a href="#guia">Guia</a>
+            <a href="dados.html">Dados</a>
+            <a href="#contato">Contato</a>
+          </div>
+    </nav>
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    max-width: 100%;
-    background-color: #fafafa;
-}
+    <header>
+        <div class="header-content">
+            <h1 class="title">Levando o Milho Brasileiro para o Mundo</h1>
+            <p class="subtitle">Facilitamos a exportação de milho para pequenos e médios agricultores, oferecendo informação, suporte e acesso ao mercado internacional.</p>
+            <a href="#introducao" class="learn-more">
+                <button class="learn-more">
+                    <span class="circle" aria-hidden="true">
+                        <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">Saiba Mais</span>
+                </button>
+            </a>
+        </div>
+        <img src="img-home/mulher-morena-com-milho.png" alt="Imagem de fundo com milho" class="img-fundo">
+    </header>
 
-html {
-    scroll-behavior: smooth; /* Faz o scroll suave */
-}
-
-/* NAV PADRÃO */
-nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #fafafa;
-    display: flex;
-    justify-content: space-between;
-    padding: 0.6rem 0;
-    align-items: center;
-    z-index: 1000;
-}
-.nav-left .site-name {
-    color: #2C332A;
-    font-weight: bold;
-    font-size: 1.6rem;
-    text-decoration: none;
-    padding: 0 1.5vw;
-    text-shadow: #181818 0px 0vw 14vw;
-}
-.nav-center a {
-    font-size: 1.2rem;
-    color: #2C332A;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-    padding: 1vw 2vw;
-    text-shadow: #181818 0px 0vw 12vw;
-}
-.nav-center a:hover {
-    color: #dadada;
-}
-
-.menu-btn {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: auto;           /* Permite crescer conforme o conteúdo */
-    min-width: 120px;      /* Ou defina um valor que caiba o texto e as barras */
-    height: 44px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0 1.5vw;
-    gap: 12px;             /* Espaço entre texto e barras */
-    transition: background 0.2s;
-    z-index: 1100;
-  }
-  .menu-text {
-    color: #2C332A;
-    font-weight: bold;
-    font-size: 1.1rem;
-    margin: 0;
-    padding: 0 1vw 0 0;
-    letter-spacing: 0.1rem;
-  }
-  .menu-bars {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 28px;
-    gap: 4px;
-   }
-   .menu-bar {
-        width: 32px;
-        height: 5px;
-        background: #2C332A;
-        border-radius: 2px;
-        transition: all 0.4s;
-        display: block;
-    }
-  .menu-btn.active .menu-bar:nth-child(1) {
-    transform: translateY(6px) rotate(-45deg);
-  }
-  .menu-btn.active .menu-bar:nth-child(2) {
-    opacity: 0;
-  }
-  .menu-btn.active .menu-bar:nth-child(3) {
-    transform: translateY(-10px) rotate(45deg);
-  }
-  .menu-lista {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 89%;
-    right: 16px;
-    width: 140px;
-    min-width: 160px;
-    max-width: 100%;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-    padding: 8px 0;
-    z-index: 1200;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-16px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-  .menu-lista.open {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-  .menu-lista a {
-    color: #1B7A43;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px 24px;
-    border-radius: 8px;
-    transition: background 0.2s;
-    display: block;
-  }
-  .menu-lista a:hover {
-    background: #e0f7e9;
-  }
-  .menu-lista.open {
-    display: flex;
-  }
-
-header {
-    position: relative;
-    display: flex;
-    flex-direction: row; /* Alinha os elementos em uma linha */
-    justify-content: center; /* Centraliza horizontalmente o conteúdo */
-    align-items: center; /* Centraliza verticalmente o conteúdo */
-    text-align: center; /* Centraliza o texto */
-    margin: 0 auto; /* Centraliza o header na tela */
-    background: url(img-home/fundo-header.svg) no-repeat;
-    background-size: cover; /* Faz a imagem cobrir todo o header */
-    background-position: 50% 60%; /* Ajusta a posição horizontal e vertical */
-    color: #ffffff; /* Cor do texto */
-    padding: 20px; /* Espaçamento interno */
-    width: 100%; /* Garante que o header não ultrapasse a largura da tela */
-    height: 600px !important; /* Altura do header */
-}
-
-header::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(76, 175, 80, 0.6); /* Verde claro com transparência */
-    pointer-events: none; /* Permite clicar nos elementos abaixo */
-    z-index: 2; /* Deve ser maior que o ::before, menor que o conteúdo */
-}
-
-header > * {
-    position: relative;
-    z-index: 3;
-}
-
-.img-fundo {
-    width: 300px;
-    height: 300px;
-    object-position: 52% 50%; /* Centraliza a imagem */
-    object-fit: cover; /* Garante que a imagem fique proporcional */
-    border-radius: 30px; /* Deixa a imagem redonda */
-    border: 1px solid #ffffff; /* Borda branca ao redor da imagem */
-    box-sizing: border-box; /* Garante que a borda não afete o tamanho da imagem */
-    box-shadow: 0 0px 30px rgba(0, 0, 0, 0.4); /* Adiciona uma sombra */
-    z-index: 4; /* Garante que a imagem fique acima do fundo */
-}
-
-.header-content {
-    max-width: 47%; /* Limita a largura do texto */
-    margin-right: 7%; /* Espaço entre o texto e a imagem */
-    text-align: left;
-    z-index: 4; /* Garante que o texto fique acima do fundo */
-}
-
-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 1;
-}
-
-.header-content .title {
-    font-size: 48px;
-    max-width: 85%;
-    letter-spacing: 0.03rem;
-}
-
-.subtitle {
-    font-size: 18px; /* Tamanho do subtítulo */
-    margin-bottom: 25px;
-    letter-spacing: 0.1rem; /* Espaçamento entre letras */
-}
-
-button {
-    position: relative;
-    display: flex;
-    cursor: pointer;
-    outline: none;
-    border: 0;
-    vertical-align: middle;
-    text-decoration: none;
-    background: transparent;
-    padding: 0;
-    font-size: inherit;
-    font-family: inherit;
-   }
-   
-   button.learn-more {
-    width: 12rem;
-    height: auto;
-   }
-   
-   button.learn-more .circle {
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-    position: relative;
-    display: block;
-    margin: 0;
-    width: 3rem;
-    height: 3rem;
-    background: #ffffff;
-    border-radius: 1.625rem;
-   }
-   
-   button.learn-more .circle .icon {
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    background: #1B7A43;
-   }
-   
-   button.learn-more .circle .icon.arrow {
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-    left: 0.625rem;
-    width: 1.125rem;
-    height: 0.125rem;
-    background: none;
-   }
-   
-   button.learn-more .circle .icon.arrow::before {
-    position: absolute;
-    content: "";
-    top: -0.29rem;
-    right: 0.0625rem;
-    width: 0.625rem;
-    height: 0.625rem;
-    border-top: 0.125rem solid #1B7A43;
-    border-right: 0.125rem solid #1B7A43;
-    transform: rotate(45deg);
-   }
-   
-   button.learn-more .button-text {
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 0.75rem 0;
-    margin: 0 0 0 1.85rem;
-    color: #ffffff;
-    font-weight: 700;
-    line-height: 1.6;
-    text-align: center;
-    text-transform: uppercase;
-   }
-   
-   button:hover .circle {
-    width: 100%;
-   }
-   
-   button:hover .circle .icon.arrow {
-    background: #fff;
-    transform: translate(1rem, 0);
-   }
-   
-   button:hover .button-text {
-    color: #1B7A43;
-   }
-
-.main-container {
-    background-color: #fafafa;
-    max-width: 84vw; /* Define a largura máxima do site */
-    margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
-    width: 100%; /* Garante que o contêiner ocupe toda a largura em telas menores */
-    box-sizing: border-box; /* Inclui padding e borda no cálculo da largura */
-}
-
-section {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-    .destaque {
-        color: #1B7A43; /* Cor de destaque */
-        font-weight: bold;
-    }
-
-    .benefits-section {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 2rem 1rem;
-    }
-    
-    .benefits-container {
-        width: 100%;
-        max-width: 1000px;
-        margin: 0 auto;
-        text-align: center;
-    }
-    
-    .benefits-title {
-        width: 100%;
-        max-width: 700px;
-        margin: 0 auto 2rem auto;
-        background-color: #ffffff;
-        border-radius: 1vw;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        padding: 2vw 1vw;
-        font-size: 1.6rem;
-        color: #5C8052;
-        text-align: center;
-    }
+    <div class="main-container">
+        <section class="benefits-section">
+            <div class="benefits-container">
+              <h2 class="benefits-title">Nossos Diferenciais</h2>
+              <div class="benefits-wrapper">
+                <div class="benefits-grid">
+                  <a href="#logistica" class="benefit-item">
+                    <div class="benefit-icon">🚢</div>
+                    <h3 class="benefit-text"></h3>
+                  </a>
+                  <a href="#atendimento-mundo" class="benefit-item">
+                    <div class="benefit-icon">🌍</div>
+                    <h3 class="benefit-text"></h3>
+                  </a>
+                  <a href="#certificacao" class="benefit-item">
+                    <div class="benefit-icon">🏆</div>
+                    <h3 class="benefit-text"></h3>
+                  </a>
+                  <a href="#b2b" class="benefit-item">
+                    <div class="benefit-icon">💼</div>
+                    <h3 class="benefit-text"></h3>
+                  </a>
+                  <div class="benefit-spacer"></div>
+                </div>
+              </div>
+            </div>
+        </section>
+          
   
-    .benefits-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr); /* Sempre 4 colunas */
-        gap: 2rem;
-        width: 100%;
-        margin: 0 auto;
-        justify-items: center;
-    }
-    
-    .benefit-item {
-        background: white;
-        padding: 2vw 0;
-        border-radius: 1vw;
-        width: 100%;
-        max-width: 240px;
-        min-height: 120px;
-        box-sizing: border-box;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        text-decoration: none;
-        color: inherit;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .benefit-item:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    }
-    
-    .benefit-icon {
-        font-size: 2.5rem;
-    }
-    
-    .benefit-text {
-        margin-top: 16px;
-        font-size: 1.1rem;
-        text-align: center;
-    }
+        <section id="introducao">
+            <div class="card-branco">
+                <div class="card-content">
+                    <h2>Conectando o Campo ao Mundo</h2>
+                    <p>Você já imaginou seu produto <strong>ultrapassando fronteiras e conquistando o mundo?</strong> Exportar pode parecer um desafio repleto de burocracia e informações complexas, mas estamos aqui para tornar esse processo simples, acessível e, acima de tudo, lucrativo para você. Se você é um pequeno ou médio agricultor e deseja entrar no comércio internacional, está no lugar certo!</p>
+                </div>
+                 <img src="img-home/navio-brazil-china.png" alt="Campo de Milho" class="card-img">
+            </div>
+        </section>
+    </div>
 
-.card-branco {
-    display: flex; /* Organiza os itens em linha */
-    align-items: center; /* Centraliza verticalmente */
-    background: #fafafa; /* Fundo branco */
-    border-radius: 10px; /* Bordas arredondadas */
-    padding: 20px; /* Espaçamento interno */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar o card */
-    margin-top: 2vw;
-    width: 100%; /* Largura total do card */
-    max-width: 84vw; /* Largura máxima do card */
-    gap: 100px; /* Espaçamento entre a imagem e o texto */
-}
+    <div class="secao-verde">
+        <div class="grid-cards">
+          <div class="grids-branco">
+            <div class="grid-content">algo1</div>
+          </div>
+          <div class="grids-branco">
+            <div class="grid-content">Conteúdo 2</div>
+          </div>
+          <div class="grids-branco">
+            <div class="grid-content">Conteúdo 3</div>
+          </div>
+          <div class="grids-branco">
+            <div class="grid-content">
+                <h2>Quem Somos</h2>
+                <p>Especialistas na exportação de milho brasileiro de alta qualidade, conectando produtores a compradores internacionais.</p>
+                <a href="#contato" class="botao-card">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-.card-img {
-    width: 400px; /* Largura da imagem */
-    height: auto; /* Mantém a proporção da imagem */
-    border-radius: 20px; /* Bordas arredondadas */
-    object-fit: cover; /* Garante que a imagem se ajuste ao espaço */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar a imagem */
-}
+    <div class="main-container">
+        <section id="conteudo-2">
+            <div class="card-verde">
+                <div class="card-content-verde">
+                    <h2>🌍 Descomplicando a exportação</h2>
+                    <p>Nós sabemos que o universo da exportação pode parecer cheio de <span class="destaque">termos complicados</span>, <span class="destaque">papeladas</span> e <span class="destaque">exigências</span>. E sabemos também que, muitas vezes, falta <span class="destaque">apoio</span>, <span class="destaque">orientação</span> e <span class="destaque">confiança</span> para dar o primeiro passo.</p>
+                    <p>Por isso, nossa proposta é <span class="destaque">simples</span> e <span class="destaque">ousada</span>:<br><strong>Fazer da exportação uma realidade acessível, prática e vantajosa para quem planta e colhe com as próprias mãos.</strong></p>
+                </div>
+            </div>
+        </section>
 
-.card-verde {
-    background: #34985d; /* Fundo verde */
-    color: #ffffff; /* Cor do texto */
-    padding: 20px; /* Espaçamento interno */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar o card */
-    margin-top: 2vw;
-    max-width: 100%; /* Largura máxima do card */
-}
+        <section id="contato">
+            <h2 class="fade-in">Contato</h2>
+            <p class="fade-in">Entre em contato conosco para mais informações sobre exportação de batatas.</p>
+                <form class="fade-in">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+        </section>
+    </div>
 
-.card-content {
-    flex: 1; /* Faz o texto ocupar o restante do espaço */
-    text-align: left; /* Alinha o texto à esquerda */
-    padding: 20px; /* Espaçamento interno */
-}
+        <script src="index.js"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-.card-content h2 {
-    margin-bottom: 15px; /* Espaçamento abaixo do título */
-    color: #4CAF50; /* Cor do título */
-    font-size: 1.8rem; /* Tamanho do título */
-    font-weight: bold; /* Negrito */
-}
-
-.card-content p {
-    color: #333; /* Cor do texto */
-    line-height: 1.6; /* Melhor espaçamento entre linhas */
-    font-size: 1.1rem; /* Tamanho do texto */
-}
-
-.card-content-verde {
-    flex: 1; /* Faz o texto ocupar o restante do espaço */
-    text-align: left; /* Alinha o texto à esquerda */
-    padding: 20px; /* Espaçamento interno */
-}
-
-.secao-verde {
-    background: #34985d;
-    padding: 2vw 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.grid-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 2rem;
-    width: 84vw;
-}
-
-.grids-branco {
-    background: #fff;
-    border-radius: 24px;
-    min-height: 16vw;
-    min-width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s;
-}
-
-.grids-branco:hover {
-        transform: scale(1.02);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.grid-content {
-    text-align: center;
-    padding: 2vw;
-    color: #333; /* Cor do texto */
-    font-size: 1.2rem; /* Tamanho do texto */
-}
-
-.grid-content h2 {
-    color: #1B7A43; /* Cor do título */
-    margin-bottom: 10px; /* Espaçamento abaixo do título */
-}
-
-.grid-content p {
-    margin-bottom: 20px; /* Espaçamento abaixo do parágrafo */
-    color: #333; /* Cor do texto */
-    font-size: 1rem; /* Tamanho do texto */
-}
-
-.grid-content .botao-card {
-    background: #1B7A43; /* Cor do botão */
-    color: #ffffff; /* Cor do texto do botão */
-    padding: 10px 20px; /* Espaçamento interno do botão */
-    border-radius: 5px; /* Bordas arredondadas */
-    text-decoration: none; /* Remove o sublinhado do link */
-    transition: all 0.3s; /* Transição suave */
-    font-size: 1rem; /* Tamanho do texto do botão */
-}
-
-.grid-content .botao-card:hover {
-    background: #145a2f;
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Estilo para a seção de contato */
-#contato {
-    background-color: #ffffff; /* Fundo claro */
-    padding: 40px 20px; /* Espaçamento interno */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
-    margin: 40px auto; /* Espaçamento externo e centralização */
-    max-width: 1600px; /* Largura máxima */
-    padding: 2rem;
-    gap: 1rem; /* Espaçamento entre os itens */
-    display: flex; /* Flexbox para organizar os itens */
-}
-
-#contato h2 {
-    font-size: 2rem; /* Tamanho do título */
-    color: #1B7A43; /* Cor do título */
-    text-align: center; /* Centraliza o título */
-    margin-bottom: 20px; /* Espaçamento abaixo do título */
-    text-align: left;
-}
-
-#contato p {
-    font-size: 1rem; /* Tamanho do texto */
-    color: #333; /* Cor do texto */
-    text-align: center; /* Centraliza o texto */
-    margin-bottom: 30px; /* Espaçamento abaixo do parágrafo */
-    text-align: left;
-}
-
-#contato form {
-    display: flex; /* Flexbox para organizar os itens */
-    flex-direction: column; /* Organiza os itens em coluna */
-    gap: 1rem; /* Espaçamento entre os campos */
-}
-
-#contato label {
-    font-size: 0.9rem; /* Tamanho do texto */
-    color: #1B7A43; /* Cor do texto */
-    font-weight: bold; /* Negrito */
-}
-
-#contato input, #contato textarea {
-    width: 100%; /* Largura total */
-    padding: 10px; /* Espaçamento interno */
-    border: 1px solid #ffffff; /* Borda sutil */
-    border-radius: 5px; /* Bordas arredondadas */
-    font-size: 1rem; /* Tamanho do texto */
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); /* Sombra leve */
-}
-
-#contato textarea {
-    resize: vertical; /* Permite redimensionar apenas verticalmente */
-    height: 100px; /* Altura padrão */
-}
-
-#contato button {
-    width: 100%; /* Largura total */
-    background-color: #1B7A43; /* Cor do botão */
-    color: #ffffff; /* Cor do texto */
-    border: none; /* Remove a borda */
-    padding: 10px 20px; /* Espaçamento interno */
-    border-radius: 5px; /* Bordas arredondadas */
-    font-size: 1rem; /* Tamanho do texto */
-    cursor: pointer; /* Cursor de clique */
-    transition: background-color 0.3s ease; /* Transição suave */
-}
-
-#contato button:hover {
-    background-color: #145a2f; /* Cor do botão ao passar o mouse */
-}
-
-footer {
-    text-align: center;
-    padding: 1rem;
-    background: #f1f1f1;
-    color: #333;
-}
-
-@media (max-width: 768px) {
-    nav {
-        justify-content: space-between !important;
-        padding: 0.6rem 1rem; /* Ajusta espaçamento interno */
-    }
-    .site-name {
-        font-size: 1.2rem;
-        padding: 0; /* Tira padding exagerado */
-        margin-left: 0.5rem;
-    }
-    .nav-center { 
-        display: none !important;
-    }
-    .menu-btn {
-        margin: 0; /* Remove margem desnecessária */
-    }
-    .menu-text {
-        display: none !important;
-    }
-    .menu-bars {
-        display: flex !important;
-        margin-left: 20vw !important;
-    }
-    .menu-lista {
-        left: 5vw;
-        right: 0vw;
-        width: 80vw;
-        min-width: 0;
-        max-width: 320px;
-        width: 100%;
-        top: 20vw;
-        padding: 2vw 0;
-        border-radius: 2vw;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-        font-size: 1.1rem;
-    }
-    .menu-lista a {
-        padding: 4vw 0px;
-        font-size: 1.2rem;
-        text-align: center;
-        box-shadow: 0 1px 8px rgba(0,0,0,0.1);
-        border-radius: 2vw;
-        margin: 1.8vw 4vw;
-    }
-    .menu-text {
-        display: block;
-        font-size: 1.1rem;
-    }
-
-    header {
-        margin: 0 auto; /* Centraliza o header na tela */
-        height: 112vw !important; /* Ajusta a altura do header */
-        background-size: cover;
-        background-position: 70% 50% !important;
-    }
-
-    /* Esconde a imagem quadrada do header */
-    .img-fundo {
-        display: none !important;
-    }
-
-    /* Header: alinha título, subtítulo e botão à esquerda com margem */
-    .header-content {
-        width: 100% !important;
-        max-width: 100vw !important;
-        margin-right: 0 !important;
-        padding-left: 4vw;
-        padding-right: 4vw;
-        margin-left: 0 !important;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        height: auto;
-        text-align: left !important;
-        margin-top: 2rem;
-    }
-    .header-content .title {
-        font-size: 1.6rem !important;
-        margin-bottom: 2vw;
-        text-align: left !important;
-        word-break: break-word;
-        line-height: 1.2;
-        width: 100%;
-    }
-    .subtitle {
-        font-size: 0.9rem !important;
-        text-align: left !important;
-        margin-top: 0.4vw;
-        margin-bottom: 5vw;
-        max-width: 82%;
-        letter-spacing: 0.1rem;
-        line-height: 1.4;
-    }
-
-    /* Botão learn-more compacto */
-    .learn-more {
-        width: 8.5rem !important;
-        height: 2.2rem !important;
-        font-size: 0.95rem !important;
-        min-width: 10vw;
-        max-width: 80vw;
-    }
-    .learn-more .circle {
-        width: 1.7rem !important;
-        height: 1.7rem !important;
-        min-width: 1.7rem !important;
-        min-height: 1.7rem !important;
-        border-radius: 1rem !important;
-    }
-    .learn-more .circle .icon.arrow {
-        left: 0.3rem !important;
-        width: 0.8rem !important;
-        height: 0.10rem !important;
-    }
-    .learn-more .circle .icon.arrow::before {
-        width: 0.45rem !important;
-        height: 0.45rem !important;
-        border-top: 0.11rem solid #1B7A43 !important;
-        border-right: 0.11rem solid #1B7A43 !important;
-        top: -0.18rem !important;
-        right: 0.01rem !important;
-    }
-    .learn-more .button-text {
-        margin: 0 0 0 1.5rem !important;
-        font-size: 0.92rem !important;
-        padding: 0.4rem 0 !important;
-        line-height: 1.2 !important;
-    }
-
-    /* Ajuste da animação para o novo tamanho */
-    .learn-more:hover .circle {
-        width: 100% !important;
-    }
-    .learn-more:hover .circle .icon.arrow {
-        background: #fff !important;
-        transform: translate(0.7rem, 0) !important;
-    }
-    .learn-more:hover .button-text {
-        color: #1B7A43 !important;
-    }
-
-    /* Ajuste do main-container */
-    .main-container {
-        width: 100%;
-        max-width: 90vw;
-    }
-
-    .benefits-section {
-        padding: 1rem 0.5rem;
-    }
-    .benefits-title {
-        font-size: 1.1rem;
-        padding: 1.2rem 0.5rem;
-    }
-
-    /* Novo wrapper da área de rolagem */
-    .benefits-wrapper {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 2rem;
-        margin-left: -8vw;
-        margin-right: -1vw;
-        padding-left: 8vw;
-        padding-right: 16vw; /* AUMENTA AQUI! */
-    }
-    .benefit-spacer {
-        flex: 0 0 auto;
-        width: 0.1vw; /* Pode ajustar esse valor */
-        height: 1px; /* Só pra existir, não precisa altura */
-    }
-
-    /* Agora o grid em si pode ser livre */
-    .benefits-grid {
-        display: flex;
-        flex-wrap: nowrap;
-        gap: 1.5rem; /* Aumenta o espaço entre os cards */
-        width: max-content;
-    }
-
-    /* Cada item normal */
-    .benefit-item {
-        flex: 0 0 auto;
-        min-width: 140px;
-        max-width: 180px;
-        scroll-snap-align: center;
-        background: white;
-        border-radius: 1rem;
-        padding: 1.5rem;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s;
-    }
-
-    .benefit-item:hover {
-        transform: scale(1.05);
-    }
-    .benefit-icon {
-        font-size: 2rem;
-    }
-    .benefit-text {
-        font-size: 1rem;
-    }
-    
-    .card-branco {
-        display: flex;
-        align-items: center;
-        background: #fafafa;
-        border-radius: 8vw;
-        padding: 6vw 6vw;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        max-width: 100%;
-        gap: 2vw;
-        flex-direction: column;
-    }
-    .card-img {
-        width: 100%;
-        max-width: 320px;
-        margin: 12px 0 0 0;
-        align-self: center;
-    }
-    .card-content {
-        text-align: center;
-        margin: 0vw 1vw;
-        width: 100%;
-        padding: 0 2vw;
-    }
-    .card-content p {
-        font-size: 1.2rem;
-        line-height: 1.4;
-    }
-    .card-verde {
-        display: flex;
-        align-items: center;
-        border-radius: 8vw;
-        padding: 6vw;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        margin: 6vw 0;
-        max-width: 100%;
-        flex-direction: column;
-    }
-    form {
-        width: 100%;
-        padding: 0;
-    }
-    input, textarea, button[type="submit"] {
-        width: 100%;
-        box-sizing: border-box;
-        margin-bottom: 10px;
-    }
-}
-
-
-/* Estilo para telas de tablets e desktops */
-@media (min-width: 769px) and (max-width: 1024px) {
-    /* Estilo para tablets */
-  }
+    <footer class="fade-in">
+        <p>&copy; 2025. Todos os direitos reservados.</p>
+        <p>Desenvolvido por Richard Barbosa Silva</p>
+    </footer>
+</body>
+</html>
