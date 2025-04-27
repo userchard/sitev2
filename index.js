@@ -20,31 +20,3 @@ menuBtn.addEventListener('click', function () {
   const expanded = this.classList.contains('active');
   this.setAttribute('aria-expanded', expanded);
 });
-
-// AQUI COMEÇA A PARTE NOVA:
-let scrollInterval;
-
-function iniciarScrollAutomatico() {
-    if (scrollInterval) clearInterval(scrollInterval);
-
-    const wrapper = document.querySelector('.benefits-wrapper');
-    if (!wrapper) return;
-
-    if (window.innerWidth <= 768) {
-        let scrollDirection = 1;
-
-        scrollInterval = setInterval(() => {
-            wrapper.scrollLeft += 2 * scrollDirection;
-
-            if (wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth - 1) {
-                scrollDirection = -1;
-            }
-            if (wrapper.scrollLeft <= 0) {
-                scrollDirection = 1;
-            }
-        }, 16);
-    }
-}
-
-document.addEventListener('DOMContentLoaded', iniciarScrollAutomatico);
-window.addEventListener('resize', iniciarScrollAutomatico);
