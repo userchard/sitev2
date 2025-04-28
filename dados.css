@@ -1,25 +1,24 @@
 /* Estilo base */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 1s ease-out;
+    will-change: opacity, transform;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-.fade-in {
-    opacity: 0;
-    transform: translateY(14px); /* Move o elemento ligeiramente para baixo */
-    transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-.fade-in.show {
-    opacity: 1;
-    transform: translateY(0); /* Retorna à posição original */
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -75,14 +74,14 @@ nav {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: auto;           /* Permite crescer conforme o conteúdo */
-    min-width: 120px;      /* Ou defina um valor que caiba o texto e as barras */
+    width: auto; /* Permite crescer conforme o conteúdo */
+    min-width: 120px; /* Ou defina um valor que caiba o texto e as barras */
     height: 44px;
     background: transparent;
     border: none;
     cursor: pointer;
     padding: 0 1.5vw;
-    gap: 12px;             /* Espaço entre texto e barras */
+    gap: 12px; /* Espaço entre texto e barras */
     transition: background 0.2s;
     z-index: 1100;
   }
@@ -222,6 +221,157 @@ header::before {
     color: #ffffff;
     letter-spacing: 0.1rem;
 }
+
+button {
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+   }
+   
+   button.learn-more {
+    width: 12rem;
+    height: auto;
+   }
+   
+   button.learn-more .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #fcfcfc;
+    border-radius: 1.625rem;
+   }
+   
+   button.learn-more .circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #1B7A43;
+   }
+   
+   button.learn-more .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+   }
+   
+   button.learn-more .circle .icon.arrow::before {
+    position: absolute;
+    content: "";
+    top: -0.29rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #1B7A43;
+    border-right: 0.125rem solid #1B7A43;
+    transform: rotate(45deg);
+   }
+   
+   button.learn-more .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+   }
+   
+   button:hover .circle {
+    width: 100%;
+   }
+   
+   button:hover .circle .icon.arrow {
+    background: #fff;
+    transform: translate(1rem, 0);
+   }
+   
+   button:hover .button-text {
+    color: #1B7A43;
+   }
+
+.main-container {
+    max-width: 84vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Cards de Benefícios */
+.benefits-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.benefits-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Sempre 4 colunas */
+    gap: 2rem;
+    width: 100%;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+.benefit-item {
+    background: white;
+    padding: 2vw 0;
+    border-radius: 1vw;
+    width: 100%;
+    max-width: 240px;
+    min-height: 120px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.benefit-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+}
+
+.benefit-text {
+    margin-top: 16px;
+    font-size: 1.1rem;
+    text-align: center;
+}
   
 .cards {
     display: flex;
@@ -231,9 +381,9 @@ header::before {
 }
   
 .card {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+    border-radius: 8vw;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.1);
     padding: 20px;
     text-align: center;
     width: 250px;
@@ -279,46 +429,230 @@ header::before {
     font-size: 1.2rem;
     color: #666;
 }
-  
-.analysis {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    margin-bottom: 30px;
+
+/* Seção de Notícias */
+.news-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: #fafafa;
+    text-align: center;
 }
-  
-.analysis h2 {
-    font-size: 1.8rem;
-    color: #2e7d32;
-    margin-bottom: 20px;
+
+.news-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #1B7A43;
 }
-  
-.analysis p {
+
+.news-list {
+    display: flex;
+    flex-direction: column; /* Alinha as notícias em uma coluna */
+    gap: 1.5rem; /* Espaçamento entre os cards */
+    width: 100%;
+}
+
+.news-item {
+    border-radius: 1.6vw;
+    padding: 1.5rem 1.5rem;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: #333;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.news-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: #1B7A43;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+}
+
+.news-item p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 1rem; /* Espaço entre o texto e o botão */
+    overflow: hidden; /* Esconde o texto que ultrapassa o limite */
+    text-overflow: ellipsis; /* Adiciona "..." ao final do texto */
+    display: -webkit-box; /* Necessário para -webkit-line-clamp funcionar */
+    display: box; /* Compatibilidade com navegadores que suportam 'box' */
+    -webkit-line-clamp: 4; /* Limita o texto a 4 linhas */
+    line-clamp: 4; /* Propriedade padrão para navegadores compatíveis */
+    -webkit-box-orient: vertical; /* Define a orientação da caixa como vertical */
+    box-orient: vertical; /* Compatibilidade com navegadores que suportam 'box-orient' */
+}
+
+.news-item a {
+    font-size: 0.9rem;
+    color: #1B7A43;
+    text-decoration: underline;
+    margin-top: auto;
+}
+
+.news-item a:hover {
+    color: #145a2f;
+}
+/* Estilo para as imagens das notícias */
+.news-item img.news-image {
+    width: 100%;
+    height: 180px; /* Define uma altura consistente */
+    object-fit: cover; /* Garante que a imagem preencha o espaço */
+    border-radius: 1.6rem 1.6rem 0 0;
+    margin-bottom: 1rem;
+}
+
+/* Estilo para o botão "Leia mais" */
+.news-item .news-button {
+    display: inline-block;
+    margin-top: auto;
+    padding: 0.5rem 1rem;
+    background-color: #1B7A43;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: flex-start; /* Alinha o botão à esquerda */
+}
+.news-item .news-button:hover {
+    background-color: #145a2f;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+/* Estilo para o botão "Ver mais notícias" */
+.news-load-more {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+}
+
+.news-load-more .btn {
+    background-color: #1B7A43;
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 2vw;
+    justify-content: center;
+    font-size: 1rem;
+    width: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.news-load-more .btn:hover {
+    background-color: #145a2f;
+}
+
+.footer {
+    background-color: #1B7A43; /* Fundo verde */
+    color: #fff; /* Texto branco */
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+.footer-about,
+.footer-links,
+.footer-contact {
+    flex: 1 1 300px;
+}
+
+.footer-about h3,
+.footer-links h3,
+.footer-contact h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.footer-about p,
+.footer-contact p {
     font-size: 1rem;
     line-height: 1.6;
 }
-  
-.button-container {
-    text-align: center;
-    margin-bottom: 40px;
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
 }
-  
-.btn {
-    background-color: #2e7d32;
+
+.footer-links ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links ul li a {
     color: #fff;
-    padding: 12px 25px;
-    border-radius: 30px;
     text-decoration: none;
     font-size: 1rem;
-    transition: background-color 0.3s ease;
+    transition: color 0.3s ease;
 }
-  
-.btn:hover {
-    background-color: #1b5e20;
+
+.footer-links ul li a:hover {
+    color: #e0f7e9; /* Cor de destaque ao passar o mouse */
+}
+
+.footer-contact a {
+    color: #e0f7e9;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+.footer-social {
+    margin-top: 1rem;
+}
+
+.footer-social a {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #e0f7e9;
+}
+
+.footer-bottom {
+    margin-top: 2rem;
+    border-top: 1px solid #e0f7e9;
+    padding-top: 1rem;
+    font-size: 0.9rem;
+    color: #e0f7e9;
 }
 
   @media (max-width: 768px) {
+    .news-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    }
+
     nav {
         justify-content: space-between !important;
         padding: 0.6rem 1rem; /* Ajusta espaçamento interno */
@@ -412,6 +746,113 @@ header::before {
         margin-bottom: 5vw;
         width: 88%;
         line-height: 1.5;
+    }
+
+    .learn-more {
+        width: 8.5rem !important;
+        height: 2.2rem !important;
+        font-size: 0.95rem !important;
+        min-width: 10vw;
+        max-width: 80vw;
+    }
+    .learn-more .circle {
+        width: 1.7rem !important;
+        height: 1.7rem !important;
+        min-width: 1.7rem !important;
+        min-height: 1.7rem !important;
+        border-radius: 1rem !important;
+    }
+    .learn-more .circle .icon.arrow {
+        left: 0.23rem !important;
+        width: 0.8rem !important;
+        height: 0.10rem !important;
+    }
+    .learn-more .circle .icon.arrow::before {
+        width: 0.45rem !important;
+        height: 0.45rem !important;
+        border-top: 0.11rem solid #1B7A43 !important;
+        border-right: 0.11rem solid #1B7A43 !important;
+        top: -0.18rem !important;
+        right: 0.01rem !important;
+    }
+    .learn-more .button-text {
+        margin: 0 0 0 0.8rem !important;
+        font-size: 0.92rem !important;
+        padding: 0.4rem 0 !important;
+        line-height: 1.2 !important;
+    }
+
+    /* Ajuste da animação para o novo tamanho */
+    .learn-more:hover .circle {
+        width: 100% !important;
+    }
+    .learn-more:hover .circle .icon.arrow {
+        background: #fff !important;
+        transform: translate(0.7rem, 0) !important;
+    }
+    .learn-more:hover .button-text {
+        color: #1B7A43 !important;
+    }
+
+    .benefits-section {
+        margin-top: 2rem;
+        padding: 0rem 0rem;
+    }
+
+    /* Novo wrapper da área de rolagem */
+    .benefits-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 2rem;
+        margin-left: -1vw;
+        margin-right: 0.1vw;
+        padding-left: 6vw;
+        padding-right: 16vw; /* AUMENTA AQUI! */
+    }
+    .benefit-spacer {
+        flex: 0 0 auto;
+        width: 0.1vw; /* Pode ajustar esse valor */
+        height: 1px; /* Só pra existir, não precisa altura */
+    }
+    /* Agora o grid em si pode ser livre */
+    .benefits-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 1.5rem; /* Aumenta o espaço entre os cards */
+        width: max-content;
+    }
+    /* Cada item normal */
+    .benefit-item {
+        flex: 0 0 auto;
+        min-width: 140px;
+        max-width: 180px;
+        scroll-snap-align: center;
+        background: white;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s;
+    }
+    .benefit-item:hover {
+        transform: scale(1.05);
+    }
+    .benefit-icon {
+        font-size: 2rem;
+    }
+    .benefit-text {
+        font-size: 1rem;
+    }
+
+    .news-section h2 {
+        border-radius: 2vw;
+        font-size: 1.2rem;
+        margin-bottom: 0rem;
+        color: #1B7A43;
+    }
+    .news-load-more .btn {
+        margin-top: 0.5rem;
+        width: 90%;
     }
 
 }
