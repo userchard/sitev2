@@ -7,70 +7,150 @@
   <link rel="stylesheet" href="dados.css">
 </head>
 <body>
-    <nav>
-        <div class="nav-left">
-            <a href="index.html" class="site-name">Rota do Milho</a>
-        </div>
-        <div class="nav-center">
-            <a href="index.html">Início</a>
-            <a href="#conteudo-1">Guia</a>
-            <a href="analise.html">Dados</a>
-            <a href="#contato">Contato</a>
-        </div>
-        <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false" id="menu-toggle">
-            <span class="menu-text">Menu</span>
-            <span class="menu-bars">
-              <span class="menu-bar"></span>
-              <span class="menu-bar"></span>
-              <span class="menu-bar"></span>
-            </span>
-          </button>
-          <div class="menu-lista" id="menu-lista">
-            <a href="index.html">Início</a>
-            <a href="#guia">Guia</a>
-            <a href="dados.html">Dados</a>
-            <a href="#contato">Contato</a>
-          </div>
-    </nav>
+  <!-- Navegação -->
+  <nav>
+    <div class="nav-left">
+      <a href="index.html" class="site-name">Rota do Milho</a>
+    </div>
+    <div class="nav-center">
+      <a href="index.html">Início</a>
+      <a href="#conteudo-1">Guia</a>
+      <a href="dados.html">Dados</a>
+      <a href="#contato">Contato</a>
+    </div>
+    <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false" id="menu-toggle">
+      <span class="menu-text">Menu</span>
+      <span class="menu-bars">
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+      </span>
+    </button>
+    <div class="menu-lista" id="menu-lista">
+      <a href="index.html">Início</a>
+      <a href="#guia">Guia</a>
+      <a href="dados.html">Dados</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </nav>
 
-<header>
+  <!-- Cabeçalho -->
+  <header>
     <div class="header-content">
-        <h1>Panorama Financeiro do Milho</h1>
-        <p class="subtitle">Acompanhe os principais indicadores do mercado de milho</p>
+      <h1>Panorama Financeiro do Milho</h1>
+      <p class="subtitle">Acompanhe os principais indicadores do mercado de milho</p>
+      <a href="#preco-da-saca" class="learn-more">
+        <button class="learn-more">
+          <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Continue</span>
+        </button>
+      </a>
     </div>
-</header>
+  </header>
 
-<section class="cards">
-    <div class="card">
-      <h2>📈 Preço da Saca</h2>
-      <p class="value">R$ 70,00</p>
+  <!-- Conteúdo Principal -->
+  <div class="main-container">
+    <!-- Seção de Benefícios -->
+    <section class="benefits-section">
+      <div class="benefits-container">
+        <div class="fade-in-section">
+          <div class="benefits-wrapper">
+            <div class="benefits-grid">
+              <a href="#logistica" class="benefit-item">
+                <div class="benefit-icon">💵</div>
+                <h3 class="benefit-text">Dolar</h3>
+              </a>
+              <a href="#atendimento-mundo" class="benefit-item">
+                <div class="benefit-icon">🌽</div>
+                <h3 class="benefit-text">Milho</h3>
+              </a>
+              <a href="#certificacao" class="benefit-item">
+                <div class="benefit-icon">📈</div>
+                <h3 class="benefit-text">Gráficos</h3>
+              </a>
+              <a href="#b2b" class="benefit-item">
+                <div class="benefit-icon">📰</div>
+                <h3 class="benefit-text">Noticias do Agro</h3>
+              </a>
+              <div class="benefit-spacer"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Cartões -->
+    <section id="preco-da-saca" class="cards">
+      <div class="fade-in-section">
+        <div class="card">
+          <h2>📈 Cotação do Dolar</h2>
+          <p class="value">R$ 5,00</p>
+        </div>
+        <div class="card">
+          <h2>💹 Variação Semanal</h2>
+          <p class="value">+2%</p>
+        </div>
+        <div class="card">
+          <h2>🌾 Produção Atual</h2>
+          <p class="value">120M toneladas</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Gráficos -->
+    <section class="graph-section">
+      <div class="fade-in-section">
+        <h2>Evolução do Preço do Milho</h2>
+        <div class="graph-placeholder">alguma coisa (grafico por exemplo)</div>
+      </div>
+    </section>
+
+    <!-- Seção de Notícias do Agro -->
+    <section id="noticias-agro" class="news-section">
+      <h2>Últimas Notícias do Agro</h2>
+      <div id="news-list" class="news-list">
+        <!-- As notícias vão aparecer aqui dinamicamente -->
+      </div>
+      <div class="news-load-more">
+        <button id="load-more-news" class="btn">Ver mais notícias</button>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-about">
+            <h3>Sobre Nós</h3>
+            <p>Especialistas na exportação de milho brasileiro, conectando produtores a compradores internacionais com eficiência e confiança.</p>
+        </div>
+        <div class="footer-links">
+            <h3>Links Úteis</h3>
+            <ul>
+                <li><a href="#introducao">Início</a></li>
+                <li><a href="#conteudo-1">Guia</a></li>
+                <li><a href="dados.html">Dados</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h3>Contato</h3>
+            <p>Email: <a href="mailto:contato@rotadomilho.com">contato@rotadomilho.com</a></p>
+            <p>Telefone: <a href="tel:+551199999999">+55 11 99999-9999</a></p>
+            <div class="footer-social">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/richardbarbo_sa/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
     </div>
-    <div class="card">
-      <h2>💹 Variação Semanal</h2>
-      <p class="value">+2%</p>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Rota do Milho. Todos os direitos reservados.</p>
+        <p>Desenvolvido por Richard Barbosa Silva</p>
     </div>
-    <div class="card">
-      <h2>🌾 Produção Atual</h2>
-      <p class="value">120M toneladas</p>
-    </div>
-</section>
+  </footer>
 
-<section class="graph-section">
-    <h2>Evolução do Preço do Milho</h2>
-    <div class="graph-placeholder">alguma coisa (grafico por exemplo)</div>
-</section>
-
-<section class="analysis">
-    <h2>Análise Resumida</h2>
-    <p>O mercado do milho vem apresentando tendência de alta impulsionado pela demanda internacional e condições climáticas favoráveis. Fique atento às movimentações e oportunidades!</p>
-    <p>E assim vai.............................</p>
-</section>
-
-<div class="button-container">
-    <a href="#" class="btn">Ver Mais</a>
-</div>
-
-<script src="dados.js"></script>
-
+  <script src="dados.js"></script>
 </body>
 </html>
