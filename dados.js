@@ -66,7 +66,7 @@ function init() {
 // Buscar notícias sobre o mercado agro usando Mediastack
 function fetchAgroNews(page = 1) {
   const accessKey = 'a1f606a083e0deeb0a297c4a515f9cd9'; // Substitua pela sua chave real
-  const url = `http://api.mediastack.com/v1/news?access_key=${accessKey}&categories=business&keywords=agriculture&languages=pt&limit=8&page=${page}`;
+  const url = `https://api.mediastack.com/v1/news?access_key=${accessKey}&categories=business&keywords=agriculture&languages=pt&limit=8&page=${page}`;
 
   fetch(url)
     .then(response => response.json())
